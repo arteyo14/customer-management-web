@@ -7,7 +7,7 @@ import { GoogleIcon } from "@/components/icons/google-icon";
 
 export const LoginCard = () => {
   return (
-    <div className="w-[480px] bg-white rounded-xl p-10 my-4">
+    <div className="w-[400px] md:w-[480px] bg-white rounded-xl p-10 my-4 md:mx-0 mx-4">
       <div className="flex flex-col items-center justify-center">
         <Image
           src="https://storage.googleapis.com/exo24_public/EXO_logo_green.png"

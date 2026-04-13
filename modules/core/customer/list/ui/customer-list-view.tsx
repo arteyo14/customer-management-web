@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import { useCustomerListStore } from "../store";
+import { CustomerListHeader } from "./customer-list-header";
+import { CustomerListTable } from "./customer-list-table";
 
 export const CustomerListView = () => {
   const { getData } = useCustomerListStore();
@@ -13,7 +15,8 @@ export const CustomerListView = () => {
 
   return (
     <div>
-      <h1>Customer List</h1>
+      <CustomerListHeader />
+      <CustomerListTable />
     </div>
   );
 };
