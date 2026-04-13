@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { CustomerDetailView } from "@/modules/core/customer/ui/customer-detail-view";
+import { CustomerDetailView } from "@/modules/core/customer/detail/ui/customer-detail-view";
 
 export const metadata: Metadata = {
   title: "Customer Mini App | Customer Detail",
