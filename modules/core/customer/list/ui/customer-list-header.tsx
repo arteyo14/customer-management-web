@@ -9,7 +9,7 @@ export const CustomerListHeader = () => {
       <div>
         <h1 className="text-2xl font-bold text-primary">Customer Management</h1>
         <p className="text-gray-500 text-sm">
-          Archived records and client profiles for The Botanical Professional.
+          Archived records and client profiles.
         </p>
       </div>
       <div className="md:flex md:justify-end md:mt-0 mt-4">
