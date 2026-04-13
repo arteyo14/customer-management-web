@@ -3,7 +3,7 @@
 import { Form } from "@/components/ui/form";
 import { useRouter } from "next/navigation";
 import { useLoginStore } from "../store/login-store";
-import { loginSchema, LoginSchema } from "../store/shema";
+import { loginSchema, LoginSchema } from "../store/schema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import handleSuccess from "@/hooks/use-handle-success";
