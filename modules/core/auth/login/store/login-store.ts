@@ -3,8 +3,7 @@ import { create } from "zustand";
 import { IResponse } from "@/types/constant/http";
 import handleError from "@/hooks/use-handle-error";
 
-import { ILoginRequest } from "../infrastructure/login-request";
-import { LoginService } from "../infrastructure/login-service";
+import { ILoginRequest, LoginService } from "../infrastructure";
 
 interface IState {
   loading: boolean;
