@@ -1,6 +1,7 @@
-import { HttpService } from "@/modules/shared/http/http-service";
-import { ILoginRequest } from "./login-request";
 import { IResponse } from "@/types/constant/http";
+import { HttpService } from "@/modules/shared/http/http-service";
+
+import { ILoginRequest } from "./login-request";
 
 export class LoginService extends HttpService {
   constructor() {

@@ -1,7 +1,8 @@
 import { create } from "zustand";
-import { ICustomerDetailResponse } from "../infrastructure/customer-response";
-import { CustomerService } from "../infrastructure/customer-service";
+
 import handleError from "@/hooks/use-handle-error";
+import { ICustomerDetailResponse, CustomerService } from "../infrastructure";
+
 interface IState {
   loading: boolean;
   data: ICustomerDetailResponse;

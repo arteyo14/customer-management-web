@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { useCustomerDetailStore } from "../store/customer-detail-store";
+
+import { useCustomerDetailStore } from "../store";
 
 export const CustomerDetailView = ({ id }: { id: number }) => {
   const { loading, data, getData } = useCustomerDetailStore();
