@@ -10,8 +10,7 @@ export const CustomerListView = () => {
 
   useEffect(() => {
     getData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [getData]);
 
   return (
     <div>
