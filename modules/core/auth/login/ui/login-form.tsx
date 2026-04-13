@@ -27,12 +27,16 @@ export const LoginForm = () => {
   const handleSubmit = async (data: LoginSchema) => {
     const res = await submit(data);
     if (res.status) {
-      handleSuccess(res.code, {
-        showAlert: true,
-        fn: () => {
-          router.push("/customer");
+      handleSuccess(
+        res.code,
+        {
+          showAlert: true,
+          fn: () => {
+            router.push("/customer");
+          },
         },
-      });
+        true,
+      );
     }
   };
 

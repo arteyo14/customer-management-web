@@ -30,6 +30,7 @@ const useHandlerSuccess = (
       className:
         "bg-success text-white border-success flex items-center px-4 py-3 rounded-lg w-full space-x-2",
       unstyled: true,
+      onAutoClose: callback.fn,
     });
 
     if (callback.fn) {
