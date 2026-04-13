@@ -31,7 +31,7 @@ export const LoginForm = () => {
       handleSuccess(res.code, {
         showAlert: true,
         fn: () => {
-          router.push("/restaurant");
+          router.push("/customer");
         },
       });
     } else {

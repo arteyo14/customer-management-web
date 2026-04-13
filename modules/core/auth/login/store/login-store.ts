@@ -17,6 +17,7 @@ export const useLoginStore = create<IState>()((set) => ({
 
     const service = new LoginService();
     const res = await service.login(request);
+    set({ loading: false });
 
     return res;
   },
