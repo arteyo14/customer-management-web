@@ -67,7 +67,7 @@ export const LoginForm = () => {
         <Button
           type="submit"
           disabled={loading}
-          className="w-full h-10 mt-2  rounded-full"
+          className="w-full h-10 mt-6 rounded-full"
         >
           Sign In
         </Button>
