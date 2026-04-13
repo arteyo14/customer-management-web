@@ -4,8 +4,8 @@ export default function CustomerLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col h-full ">
-      <div className="flex-1 overflow-y-auto p-10">{children}</div>
+    <div className="flex flex-col h-full bg-bg-main">
+      <div className="flex-1 overflow-y-auto p-10 min-h-screen">{children}</div>
     </div>
   );
 }
