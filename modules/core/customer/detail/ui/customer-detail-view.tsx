@@ -3,9 +3,12 @@
 import { useEffect } from "react";
 
 import { useCustomerDetailStore } from "../store";
+import Link from "next/link";
+import { ArrowLeftIcon } from "lucide-react";
+import { CustomerDetailInfo } from "./customer-detail-info";
 
 export const CustomerDetailView = ({ id }: { id: number }) => {
-  const { loading, data, getData } = useCustomerDetailStore();
+  const { loading, getData } = useCustomerDetailStore();
 
   useEffect(() => {
     if (!id) return;
@@ -15,34 +18,16 @@ export const CustomerDetailView = ({ id }: { id: number }) => {
 
   return (
     <div>
-      <h1>Customer Detail</h1>
-      {loading ? (
-        <div>Loading...</div>
-      ) : data ? (
-        <div>
-          <p>ID: {id}</p>
-          <p>Name: {data?.name}</p>
-          <p>Company: {data?.company}</p>
-          <p>Initials: {data?.initials}</p>
-          <p>Active Since: {data?.active_since.toString()}</p>
-          <p>Email: {data?.email}</p>
-          <p>Phone: {data?.phone}</p>
-          <p>Salesperson: {data?.salesperson}</p>
-          <p>Credit Status: {data?.credit_status}</p>
-          <p>Status: {data?.status}</p>
-          <p>Total Spend: {data?.total_spend}</p>
-          <p>Number of Purchases: {data?.number_of_purchases}</p>
-          <p>Last Activity: {data?.last_activity.toString()}</p>
-          <p>
-            Recent Activity:{" "}
-            {data?.recent_activity
-              .map((activity) => activity.action)
-              .join(", ")}
-          </p>
-        </div>
-      ) : (
-        <div>Not Found</div>
-      )}
+      <div className="w-full mb-6">
+        <Link
+          href="/customer"
+          className="text-primary text-base flex items-center space-x-2 hover:underline"
+        >
+          <ArrowLeftIcon width={18} />
+          <span className="font-bold">Back to customer list</span>
+        </Link>
+      </div>
+      {loading ? <div>Loading...</div> : <CustomerDetailInfo />}
     </div>
   );
 };
