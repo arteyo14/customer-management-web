@@ -26,12 +26,12 @@ function FormTextInput<T extends FieldValues>({
       control={formMethods.control}
       name={name}
       render={({ field }) => (
-        <FormItem>
+        <FormItem className="gap-0">
           <FormLabelRequied label={label} required={required} />
           <FormControl>
             <Input className="h-10" {...field} {...rest} />
           </FormControl>
-          <FormMessage />
+          <FormMessage className="mt-1" />
         </FormItem>
       )}
     />

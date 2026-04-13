@@ -32,7 +32,7 @@ const FormPasswordInput = <T extends FieldValues>({
       control={formMethods.control}
       name={name}
       render={({ field }) => (
-        <FormItem>
+        <FormItem className="gap-0">
           <FormLabelRequied label={label} required={required} />
           <div className="relative">
             <FormControl>
@@ -51,7 +51,7 @@ const FormPasswordInput = <T extends FieldValues>({
               {!show ? <EyeClosed stroke="#000" /> : <Eye stroke="#000" />}
             </Button>
           </div>
-          <FormMessage />
+          <FormMessage className="mt-1" />
         </FormItem>
       )}
     />
