@@ -21,9 +21,9 @@ export const CustomerDetailView = ({ id }: { id: number }) => {
       <div className="w-full mb-6">
         <Link
           href="/customer"
-          className="text-primary text-base flex items-center space-x-2 hover:underline"
+          className="text-primary text-xs flex items-center space-x-2 hover:underline"
         >
-          <ArrowLeftIcon width={18} />
+          <ArrowLeftIcon width={16} />
           <span className="font-bold">Back to customer list</span>
         </Link>
       </div>
