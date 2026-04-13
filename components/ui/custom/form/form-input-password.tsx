@@ -36,11 +36,16 @@ const FormPasswordInput = <T extends FieldValues>({
           <FormLabelRequied label={label} required={required} />
           <div className="relative">
             <FormControl>
-              <Input {...field} {...props} type={show ? "text" : "password"} />
+              <Input
+                className="h-10"
+                {...field}
+                {...props}
+                type={show ? "text" : "password"}
+              />
             </FormControl>
             <Button
               type="button"
-              className="absolute top-0 right-0 cursor-pointer bg-transparent hover:bg-transparent"
+              className="absolute top-1 right-0 cursor-pointer bg-transparent hover:bg-transparent"
               onClick={() => setShow(!show)}
             >
               {!show ? <EyeClosed stroke="#000" /> : <Eye stroke="#000" />}

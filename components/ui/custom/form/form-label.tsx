@@ -9,9 +9,9 @@ type IProps = {
 
 const FormLabelRequied = ({ label, required = false }: IProps) => {
   return (
-    <FormLabel>
+    <FormLabel className="gap-1">
       {label}
-      {required && <span className="text-red-500">*</span>}
+      {required && <span className="text-red-500 text-xl">*</span>}
     </FormLabel>
   );
 };

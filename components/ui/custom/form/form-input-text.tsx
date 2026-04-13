@@ -29,7 +29,7 @@ function FormTextInput<T extends FieldValues>({
         <FormItem>
           <FormLabelRequied label={label} required={required} />
           <FormControl>
-            <Input {...field} {...rest} />
+            <Input className="h-10" {...field} {...rest} />
           </FormControl>
           <FormMessage />
         </FormItem>
