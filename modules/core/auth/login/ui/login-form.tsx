@@ -7,7 +7,6 @@ import { loginSchema, LoginSchema } from "../store/shema";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import handleSuccess from "@/hooks/use-handle-success";
-import handleError from "@/hooks/use-handle-error";
 import FormTextInput from "@/components/ui/custom/form/form-input-text";
 import FormPasswordInput from "@/components/ui/custom/form/form-input-password";
 import Link from "next/link";
@@ -34,8 +33,6 @@ export const LoginForm = () => {
           router.push("/customer");
         },
       });
-    } else {
-      handleError(res.code, res.error, { showAlert: true });
     }
   };
 
