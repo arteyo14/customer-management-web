@@ -56,7 +56,14 @@ export const getColumns = (
   },
   {
     accessorKey: "total_spend",
-    header: "TOTAL SPEND",
+    header: () => (
+      <button
+        className="flex items-center gap-2 hover:text-primary"
+        onClick={() => onSort("total_spend")}
+      >
+        TOTAL SPEND <ArrowUpDown size={14} />
+      </button>
+    ),
     cell: ({ row }) => (
       <span>${row.original.total_spend.toLocaleString()}</span>
     ),
