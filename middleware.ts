@@ -5,10 +5,10 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (!isLoggedIn && pathname.startsWith("/customer")) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    return NextResponse.redirect(new URL("/auth/login", request.url));
   }
 
-  if (isLoggedIn && pathname === "/login") {
+  if (isLoggedIn && pathname === "/auth/login") {
     return NextResponse.next();
   }
 
