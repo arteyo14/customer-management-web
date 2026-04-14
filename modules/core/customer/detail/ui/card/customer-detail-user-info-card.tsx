@@ -1,6 +1,6 @@
 "use client";
 
-import { useCustomerDetailStore } from "../store";
+import { useCustomerDetailStore } from "../../store";
 
 export const CustomerDetailUserInfoCard = () => {
   const { data } = useCustomerDetailStore();

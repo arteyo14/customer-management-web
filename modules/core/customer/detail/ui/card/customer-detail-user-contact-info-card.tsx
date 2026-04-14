@@ -6,7 +6,7 @@ import {
   MailIcon,
   PhoneCallIcon,
 } from "lucide-react";
-import { useCustomerDetailStore } from "../store";
+import { useCustomerDetailStore } from "../../store";
 
 export const CustomerDetailUserContactInfoCard = () => {
   const { data } = useCustomerDetailStore();

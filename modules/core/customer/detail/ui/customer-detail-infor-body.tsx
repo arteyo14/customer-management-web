@@ -1,7 +1,7 @@
 "use client";
 
-import { CustomerDetailUserContactInfoCard } from "./customer-detail-user-contact-info-card";
-import { CustomerDetailUserInfoCard } from "./customer-detail-user-info-card";
+import { CustomerDetailUserContactInfoCard } from "./card/customer-detail-user-contact-info-card";
+import { CustomerDetailUserInfoCard } from "./card/customer-detail-user-info-card";
 
 export const CustomerDetailInfoBody = () => {
   return (
