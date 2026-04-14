@@ -91,7 +91,7 @@ export const getColumns = (
       </div>
     ),
     cell: ({ row }) => (
-      <div className="text-right tabular-nums ">
+      <div className="text-right tabular-nums">
         {formatNumber(row.original.total_spend, 2)}
       </div>
     ),
