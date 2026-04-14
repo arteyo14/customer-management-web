@@ -12,8 +12,8 @@ export const CustomerListHeader = () => {
           Archived records and client profiles.
         </p>
       </div>
-      <div className="md:flex md:justify-end md:mt-0 mt-4">
-        <Button className="bg-primary text-white p-4 h-10 rounded-lg font-bold w-full md:w-auto">
+      <div className="flex justify-end mt-4 md:mt-0">
+        <Button className="bg-primary text-white p-4 h-10 rounded-lg font-bold w-1/2 md:w-auto">
           <PlusIcon className="w-4 h-4 mr-2" />
           Add Customer
         </Button>
