@@ -93,7 +93,6 @@ export const TablePagination = ({
         </p>
       </div>
 
-      {/* ส่วนปุ่มกดเลขหน้า */}
       <div className="flex items-center gap-1 order-1 md:order-2">
         <button
           disabled={currentPage === 1}
@@ -120,7 +119,7 @@ export const TablePagination = ({
               className={`min-w-[32px] md:min-w-[36px] h-8 md:h-9 text-xs font-bold rounded-full transition-all ${
                 currentPage === page
                   ? "bg-primary text-white shadow-lg shadow-primary/20 hover:bg-primary/90 hover:text-white"
-                  : "text-gray-500 hover:bg-gray-50"
+                  : "text-gray-500 hover:bg-gray-50 bg-bg-main"
               }`}
             >
               {page}
