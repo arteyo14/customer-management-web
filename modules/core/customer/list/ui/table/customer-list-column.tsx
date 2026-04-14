@@ -12,7 +12,7 @@ export const getColumns = (
     accessorKey: "id",
     header: () => (
       <button
-        className="flex items-center gap-2 hover:text-primary"
+        className="flex items-center gap-2 hover:text-primary cursor-pointer"
         onClick={() => onSort("id")}
       >
         ID <ArrowUpDown size={14} />
@@ -23,7 +23,7 @@ export const getColumns = (
     accessorKey: "name",
     header: () => (
       <button
-        className="flex items-center gap-2 hover:text-primary"
+        className="flex items-center gap-2 hover:text-primary cursor-pointer"
         onClick={() => onSort("name")}
       >
         NAME <ArrowUpDown size={14} />
@@ -32,7 +32,7 @@ export const getColumns = (
     cell: ({ row }) => (
       <Link
         href={`/customer/${row.original.id}`}
-        className="font-semibold hover:text-primary hover:underline"
+        className="font-semibold text-blue-500 hover:text-blue-600 hover:underline"
       >
         {row.original.name}
       </Link>
@@ -41,6 +41,14 @@ export const getColumns = (
   {
     accessorKey: "email",
     header: "EMAIL",
+  },
+  {
+    accessorKey: "company",
+    header: "Company",
+  },
+  {
+    accessorKey: "phone",
+    header: "Phone",
   },
   {
     accessorKey: "status",
@@ -64,7 +72,7 @@ export const getColumns = (
     accessorKey: "total_spend",
     header: () => (
       <button
-        className="flex items-center gap-2 hover:text-primary"
+        className="flex items-center gap-2 hover:text-primary cursor-pointer"
         onClick={() => onSort("total_spend")}
       >
         TOTAL SPEND <ArrowUpDown size={14} />

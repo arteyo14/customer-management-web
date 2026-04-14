@@ -97,7 +97,7 @@ export const TablePagination = ({
         <button
           disabled={currentPage === 1}
           onClick={() => onPageChange(currentPage - 1)}
-          className="p-2 text-gray-400 hover:bg-gray-100 rounded-lg disabled:opacity-20 transition-colors"
+          className="p-2 text-gray-400 hover:bg-gray-100 rounded-lg disabled:opacity-20 transition-colors cursor-pointer"
         >
           <ChevronLeft size={18} />
         </button>
@@ -130,7 +130,7 @@ export const TablePagination = ({
         <button
           disabled={currentPage >= totalPages}
           onClick={() => onPageChange(currentPage + 1)}
-          className="p-2 text-gray-400 hover:bg-gray-100 rounded-lg disabled:opacity-20 transition-colors"
+          className="p-2 text-gray-400 hover:bg-gray-100 rounded-lg disabled:opacity-20 transition-colors cursor-pointer"
         >
           <ChevronRight size={18} />
         </button>
