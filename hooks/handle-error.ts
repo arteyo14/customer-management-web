@@ -63,7 +63,8 @@ const handleError = (
     toast.error(message, {
       duration: 3000,
       unstyled: true,
-      className: "bg-destructive text-white px-4 py-3 rounded-lg w-full",
+      className:
+        "flex items-center gap-2 bg-destructive text-white px-4 py-3 rounded-lg w-full",
       onAutoClose: () => {
         if (callback.fn) callback.fn();
       },
