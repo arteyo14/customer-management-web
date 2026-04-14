@@ -30,7 +30,6 @@ export const useAuthStore = create<IState>()(
         document.cookie =
           "is_logged_in=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
         set({ isAuthenticated: false, user: null });
-        window.location.href = "/login";
       },
     }),
     { name: "auth-storage" },
