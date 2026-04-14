@@ -8,7 +8,7 @@ export const CustomerDetailUserFinancialTransactionCard = () => {
   const { data } = useCustomerDetailStore();
   return (
     <div className="bg-[#F0F5F1] rounded-4xl p-6 h-full">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between items-center">
         <div className="text-sm">ENGAGEMENT TIMELINE</div>
         <Link
           href="#"
@@ -21,11 +21,13 @@ export const CustomerDetailUserFinancialTransactionCard = () => {
       {(() => {
         if (data?.recent_activity?.length === 0)
           return (
-            <div className="text-center text-gray-500">No recent activity</div>
+            <div className="text-center text-gray-500 h-full flex justify-center items-center">
+              No recent activity
+            </div>
           );
 
         return (
-          <ul className="w-full flex flex-col gap-3">
+          <ul className="w-full flex flex-col gap-3 mt-4">
             {data?.recent_activity?.map((activity, index) => (
               <li
                 key={index}
