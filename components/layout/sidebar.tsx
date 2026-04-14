@@ -59,7 +59,7 @@ export const Sidebar = () => {
 
       <div className="p-4 border-t border-gray-50">
         <button
-          onClick={() => handleLogout}
+          onClick={() => handleLogout()}
           className="flex items-center gap-3 w-full px-4 py-3 text-sm font-bold text-error hover:bg-error/5 rounded-xl transition-colors cursor-pointer hover:bg-destructive hover:text-white"
         >
           <LogOutIcon size={18} />
