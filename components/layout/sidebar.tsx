@@ -4,12 +4,19 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { UsersIcon, LogOutIcon, UserCircleIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAuthStore } from "@/modules/core/auth/store/auth-store";
 
 const NAV_ITEMS = [{ label: "Customers", href: "/customer", icon: UsersIcon }];
 
 export const Sidebar = () => {
   const pathname = usePathname();
   const router = useRouter();
+  const { logout } = useAuthStore();
+
+  const handleLogout = () => {
+    logout();
+    router.push("/auth/login");
+  };
 
   return (
     <aside className="w-64 bg-white border-r border-gray-100 flex flex-col h-full shadow-sm">
@@ -52,7 +59,7 @@ export const Sidebar = () => {
 
       <div className="p-4 border-t border-gray-50">
         <button
-          onClick={() => router.push("/auth/login")}
+          onClick={() => handleLogout}
           className="flex items-center gap-3 w-full px-4 py-3 text-sm font-bold text-error hover:bg-error/5 rounded-xl transition-colors cursor-pointer hover:bg-destructive hover:text-white"
         >
           <LogOutIcon size={18} />
