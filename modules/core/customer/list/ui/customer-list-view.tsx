@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useCustomerListStore } from "../store";
 import { CustomerListHeader } from "./customer-list-header";
-import { CustomerListTable } from "./customer-list-table";
+import { CustomerListTable } from "./table/customer-list-table";
 
 export const CustomerListView = () => {
   const { getData } = useCustomerListStore();

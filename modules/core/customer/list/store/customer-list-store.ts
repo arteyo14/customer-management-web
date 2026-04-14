@@ -12,6 +12,7 @@ export interface IState {
   params: getCustomerListRequest;
   data: IPagination<ICustomerListResponse[]>;
   getData: () => Promise<void>;
+  setParams: (newParams: Partial<IState["params"]>) => void;
 }
 
 export const useCustomerListStore = create<IState>((set, get) => ({
@@ -49,5 +50,15 @@ export const useCustomerListStore = create<IState>((set, get) => ({
     }
 
     set({ loading: false });
+  },
+  setParams: (newParams) => {
+    set((state) => ({
+      params: {
+        ...state.params,
+        ...newParams,
+        page: newParams.page ?? state.params.page,
+      },
+    }));
+    get().getData();
   },
 }));
