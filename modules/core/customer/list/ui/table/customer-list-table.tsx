@@ -1,7 +1,7 @@
 "use client";
 "use no memo";
 
-import { useEffect, useMemo, useCallback } from "react";
+import { useMemo, useCallback, useEffect } from "react";
 import { useCustomerListStore } from "../../store";
 import { getColumns } from "./customer-list-column";
 import { DataTable } from "@/components/ui/custom/table/data-table";
@@ -12,7 +12,8 @@ export const CustomerListTable = () => {
 
   useEffect(() => {
     getData();
-  }, [getData]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSort = useCallback(
     (field: string) => {
