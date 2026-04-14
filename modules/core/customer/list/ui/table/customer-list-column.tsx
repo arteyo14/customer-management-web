@@ -33,7 +33,7 @@ export const getColumns = (
     cell: ({ row }) => (
       <Link
         href={`/customer/${row.original.id}`}
-        className="font-semibold text-blue-500 hover:text-blue-600 hover:underline"
+        className="font-semibold text-blue-500 hover:text-blue-600 hover:underline text-nowrap"
       >
         {row.original.name}
       </Link>
@@ -42,14 +42,23 @@ export const getColumns = (
   {
     accessorKey: "email",
     header: "EMAIL",
+    cell: ({ row }) => {
+      return <span className="text-nowrap">{row.original.email}</span>;
+    },
   },
   {
     accessorKey: "company",
     header: "Company",
+    cell: ({ row }) => {
+      return <span className="text-nowrap">{row.original.company}</span>;
+    },
   },
   {
     accessorKey: "phone",
     header: "Phone",
+    cell: ({ row }) => {
+      return <span className="text-nowrap">{row.original.phone}</span>;
+    },
   },
   {
     accessorKey: "status",
@@ -73,7 +82,7 @@ export const getColumns = (
     accessorKey: "total_spend",
     header: () => (
       <button
-        className="flex items-center gap-2 hover:text-primary cursor-pointer"
+        className="flex items-center gap-2 hover:text-primary cursor-pointer text-nowrap"
         onClick={() => onSort("total_spend")}
       >
         TOTAL SPEND <ArrowUpDown size={14} />
