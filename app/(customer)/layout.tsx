@@ -5,7 +5,9 @@ export default function CustomerLayout({
 }) {
   return (
     <div className="flex flex-col h-full bg-bg-main">
-      <div className="flex-1 overflow-y-auto p-8 min-h-screen">{children}</div>
+      <div className="flex-1 overflow-y-auto p-4 md:p-8 min-h-screen">
+        {children}
+      </div>
     </div>
   );
 }

@@ -37,27 +37,42 @@ export function DataTable<TData, TValue>({
     manualPagination: true,
   });
 
+  const HEADER_HEIGHT = "52px";
+  const MIN_BODY_HEIGHT = "560px";
+
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-      <div className="overflow-x-auto relative">
+      <div
+        className="overflow-x-auto relative"
+        style={{ minHeight: `calc(${HEADER_HEIGHT} + ${MIN_BODY_HEIGHT})` }}
+      >
         {loading && (
-          <div className="absolute inset-0 bg-white/60 flex items-center justify-center z-20 backdrop-blur-[1px]">
-            <span className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></span>
+          <div
+            className="absolute inset-x-0 bottom-0 bg-white/60 flex items-center justify-center z-20 backdrop-blur-[1px]"
+            style={{ top: HEADER_HEIGHT }}
+          >
+            <div className="flex flex-col items-center gap-2">
+              <span className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></span>
+              <span className="text-xs font-bold text-primary animate-pulse">
+                LOADING...
+              </span>
+            </div>
           </div>
         )}
 
         <table className="w-full text-left border-collapse">
-          <thead className="bg-[#F7FCF8] text-xs font-bold text-gray-500 uppercase tracking-wider">
+          <thead
+            className="bg-[#F7FCF8] text-xs font-bold text-gray-500 uppercase tracking-wider"
+            style={{ height: HEADER_HEIGHT }}
+          >
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
                   <th key={header.id} className="px-6 py-4">
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
                   </th>
                 ))}
               </tr>
@@ -69,7 +84,7 @@ export function DataTable<TData, TValue>({
               ? table.getRowModel().rows.map((row) => (
                   <tr
                     key={row.id}
-                    className="hover:bg-gray-50 transition-colors"
+                    className="hover:bg-gray-50 transition-colors h-[56px]"
                   >
                     {row.getVisibleCells().map((cell) => (
                       <td
@@ -85,10 +100,10 @@ export function DataTable<TData, TValue>({
                   </tr>
                 ))
               : !loading && (
-                  <tr>
+                  <tr style={{ height: MIN_BODY_HEIGHT }}>
                     <td
                       colSpan={columns.length}
-                      className="h-24 text-center text-gray-400 italic"
+                      className="text-center text-gray-400 italic"
                     >
                       No results found.
                     </td>
