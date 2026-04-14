@@ -16,7 +16,7 @@ export const getColumns = (
         className="flex items-center gap-2 hover:text-primary cursor-pointer"
         onClick={() => onSort("id")}
       >
-        ID <ArrowUpDown size={14} />
+        No <ArrowUpDown size={14} />
       </button>
     ),
   },
