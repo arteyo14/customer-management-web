@@ -23,4 +23,8 @@
    ```
 3. เข้าใช้งานที่ http://localhost:3000
 
+เข้าสู่ระบบด้วยข้อมูลดังนี้:
+email: admin@example.com
+password: P@ssw0rd!
+
 ** run โปรเจค Backend https://github.com/arteyo14/customer-manangement-api พร้อมกัน **
