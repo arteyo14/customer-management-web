@@ -12,7 +12,7 @@ export const CustomerListTable = () => {
 
   useEffect(() => {
     getData();
-  }, [params, getData]);
+  }, [getData]);
 
   const handleSort = useCallback(
     (field: string) => {

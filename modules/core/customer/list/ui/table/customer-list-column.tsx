@@ -9,7 +9,14 @@ export const getColumns = (
 ): ColumnDef<ICustomerListResponse>[] => [
   {
     accessorKey: "id",
-    header: "ID",
+    header: () => (
+      <button
+        className="flex items-center gap-2 hover:text-primary"
+        onClick={() => onSort("id")}
+      >
+        ID <ArrowUpDown size={14} />
+      </button>
+    ),
   },
   {
     accessorKey: "name",
