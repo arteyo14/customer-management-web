@@ -13,7 +13,7 @@ export const CustomerListView = () => {
   }, [getData]);
 
   return (
-    <div>
+    <div className="grid grid-cols-1 gap-4">
       <CustomerListHeader />
       <CustomerListTable />
     </div>

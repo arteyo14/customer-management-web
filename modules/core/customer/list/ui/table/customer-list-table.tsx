@@ -95,7 +95,6 @@ export const CustomerListTable = () => {
           </tbody>
         </table>
       </div>
-
       <TablePagination
         currentPage={params.page}
         totalItems={data?.total || 0}

@@ -16,7 +16,7 @@ export interface IState {
 }
 
 export const useCustomerListStore = create<IState>((set, get) => ({
-  loading: false,
+  loading: true,
   params: {
     page: 1,
     limit: 10,
@@ -32,7 +32,6 @@ export const useCustomerListStore = create<IState>((set, get) => ({
     total_pages: 0,
   },
   getData: async () => {
-    set({ loading: true });
     const params = get().params;
 
     const service = new CustomerListService();
