@@ -1,6 +1,8 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { useCustomerDetailStore } from "../../store";
+import { CustomerStatus } from "../../infrastructure";
 
 export const CustomerDetailUserInfoCard = () => {
   const { data } = useCustomerDetailStore();
@@ -12,7 +14,14 @@ export const CustomerDetailUserInfoCard = () => {
           <span className="text-4xl font-bold text-black">
             {data?.initials}
           </span>
-          <div className="absolute bottom-0 right-0 border-3 border-white bg-primary rounded-full p-2 w-8 h-8 flex items-center justify-center"></div>
+          <div
+            className={cn(
+              "absolute bottom-0 right-0 border-3 border-white rounded-full p-2 w-8 h-8 flex items-center justify-center",
+              data?.status === CustomerStatus.ACTIVE && "bg-success",
+              data?.status === CustomerStatus.INACTIVE && "bg-red-600",
+              data?.status === CustomerStatus.PENDING && "bg-warning",
+            )}
+          ></div>
         </div>
         <h4 className="text-2xl font-bold text-black mb-2">
           {data?.name || "-"}
