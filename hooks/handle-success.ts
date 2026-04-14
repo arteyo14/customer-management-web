@@ -26,7 +26,7 @@ const handleSuccess = (
 
   if (callback.showAlert) {
     toast.success(isLogin ? "Login Success" : message, {
-      duration: 4000,
+      duration: 2500,
       className:
         "bg-success text-white border-success flex items-center px-4 py-3 rounded-lg w-full space-x-2",
       unstyled: true,

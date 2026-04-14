@@ -61,7 +61,7 @@ const handleError = (
 
   if (callback.showAlert) {
     toast.error(message, {
-      duration: 3000,
+      duration: 2500,
       unstyled: true,
       className:
         "flex items-center gap-2 bg-destructive text-white px-4 py-3 rounded-lg w-full",
