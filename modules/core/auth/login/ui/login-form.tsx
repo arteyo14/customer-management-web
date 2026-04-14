@@ -12,10 +12,12 @@ import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import FormTextInput from "@/components/ui/custom/form/form-input-text";
 import FormPasswordInput from "@/components/ui/custom/form/form-input-password";
+import { useAuthStore } from "../../store/auth-store";
 
 export const LoginForm = () => {
   const router = useRouter();
   const { loading, submit } = useLoginStore();
+  const { login, setLoginCookie } = useAuthStore();
 
   const form = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
@@ -28,11 +30,14 @@ export const LoginForm = () => {
   const handleSubmit = async (data: LoginSchema) => {
     const res = await submit(data);
     if (res.status) {
+      setLoginCookie();
+
       handleSuccess(
         res.code,
         {
           showAlert: true,
           fn: () => {
+            login();
             router.push("/customer");
           },
         },
