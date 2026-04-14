@@ -22,3 +22,5 @@
    bun run dev
    ```
 3. เข้าใช้งานที่ http://localhost:3000
+
+** run โปรเจค Backend https://github.com/arteyo14/customer-manangement-api พร้อมกัน **
