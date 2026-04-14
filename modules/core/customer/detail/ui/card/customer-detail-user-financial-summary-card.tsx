@@ -7,10 +7,10 @@ export const CustomerDetailUserFinancialSummaryCard = () => {
   const { data } = useCustomerDetailStore();
   return (
     <div className="bg-white rounded-4xl shadow-sm p-7">
-      <div className="text-xs text-primary font-bold mb-8">
+      <div className="text-xs text-primary font-bold mb-4 xl:mb-8">
         FINANCIAL & PURCHASE SUMMARY
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-8">
         <div className="bg-[#F0F5F1] rounded-4xl p-6 flex flex-col">
           <span className="text-xs font-bold text-gray-600">
             TOTAL LIFETIME SPEND
