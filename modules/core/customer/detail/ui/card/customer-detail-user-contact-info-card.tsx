@@ -42,7 +42,9 @@ export const CustomerDetailUserContactInfoCard = () => {
           <div className="flex flex-col">
             <span className="text-xs font-medium">ACTIVE SINCE</span>
             <span className="text-sm font-semibold">
-              {format(data?.active_since, "dd MMM yyyy") || "-"}
+              {(data?.active_since &&
+                format(data?.active_since, "dd MMM yyyy")) ||
+                "-"}
             </span>
           </div>
         </div>

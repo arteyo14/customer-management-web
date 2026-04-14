@@ -17,7 +17,7 @@ const mapStatusToMessage = (statusCode: number): string => {
   }
 };
 
-const useHandlerSuccess = (
+const handleSuccess = (
   statusCode: number,
   callback: ICallback = { showAlert: false },
   isLogin?: boolean,
@@ -43,4 +43,4 @@ const useHandlerSuccess = (
   }
 };
 
-export default useHandlerSuccess;
+export default handleSuccess;

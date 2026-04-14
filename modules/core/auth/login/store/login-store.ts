@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 import { IResponse } from "@/types/constant/http";
-import handleError from "@/hooks/use-handle-error";
+import handleError from "@/hooks/handle-error";
 
 import { ILoginRequest, LoginService } from "../infrastructure";
 

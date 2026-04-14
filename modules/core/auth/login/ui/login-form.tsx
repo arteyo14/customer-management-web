@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import handleSuccess from "@/hooks/use-handle-success";
+import handleSuccess from "@/hooks/handle-success";
 import { loginSchema, LoginSchema, useLoginStore } from "../store";
 
 import { Form } from "@/components/ui/form";

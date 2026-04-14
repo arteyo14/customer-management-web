@@ -44,41 +44,40 @@ const mapStatusToToast = (statusCode: number, error?: IError): ToastConfig => {
   }
 };
 
-const useHandlerError = (
+const handleError = (
   statusCode: number,
   error?: IError,
   callback: ICallback = { showAlert: false },
 ) => {
   const actionStore = useActionStore.getState();
 
-  if (statusCode === HttpStatusCode.NOT_FOUND) {
-    return toast.error("Not Found");
-  }
-
   if (statusCode === HttpStatusCode.VALIDATE) {
-    const actions = actionStore.actions;
-
-    if (error) {
-      actions.setErrors(error.field);
-    }
+    if (error) actionStore.actions.setErrors(error.field);
     return;
   }
 
   const toastConfig = mapStatusToToast(statusCode, error);
+  const message = error?.message || toastConfig.description;
 
   if (callback.showAlert) {
-    toast.error(error?.message ? error.message : toastConfig.description, {
-      duration: 4000,
+    toast.error(message, {
+      duration: 3000,
       unstyled: true,
-      className:
-        "bg-destructive text-white border-destructive flex items-center px-4 py-3 rounded-lg w-full space-x-2",
-      onAutoClose: callback.fn,
+      className: "bg-destructive text-white px-4 py-3 rounded-lg w-full",
+      onAutoClose: () => {
+        if (callback.fn) callback.fn();
+      },
+      onDismiss: () => {
+        if (callback.fn) callback.fn();
+      },
     });
+
+    return;
   }
 
-  if (!callback.showAlert && callback.fn) {
-    return callback.fn();
+  if (callback.fn) {
+    callback.fn();
   }
 };
 
-export default useHandlerError;
+export default handleError;

@@ -5,7 +5,7 @@ import {
   ICustomerListResponse,
 } from "../infrastructure";
 import { IPagination } from "@/types/pagination";
-import handleError from "@/hooks/use-handle-error";
+import handleError from "@/hooks/handle-error";
 
 export interface IState {
   loading: boolean;

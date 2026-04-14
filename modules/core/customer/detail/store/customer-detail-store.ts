@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import handleError from "@/hooks/use-handle-error";
+import handleError from "@/hooks/handle-error";
 import { ICustomerDetailResponse, CustomerService } from "../infrastructure";
 
 interface IState {
@@ -20,7 +20,7 @@ export const useCustomerDetailStore = create<IState>((set) => ({
       handleError(res.code, res.error, {
         showAlert: true,
         fn: () => {
-          window.location.href = "/customer";
+          window.location.href = "/not-found";
         },
       });
     }
