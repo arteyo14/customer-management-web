@@ -81,15 +81,19 @@ export const getColumns = (
   {
     accessorKey: "total_spend",
     header: () => (
-      <button
-        className="flex items-center gap-2 hover:text-primary cursor-pointer text-nowrap"
-        onClick={() => onSort("total_spend")}
-      >
-        TOTAL SPEND <ArrowUpDown size={14} />
-      </button>
+      <div className="text-right w-full">
+        <button
+          className="flex items-center gap-2 hover:text-primary cursor-pointer text-nowrap ml-auto text-right"
+          onClick={() => onSort("total_spend")}
+        >
+          TOTAL SPEND <ArrowUpDown size={14} />
+        </button>
+      </div>
     ),
     cell: ({ row }) => (
-      <span>${formatNumber(row.original.total_spend, 2)}</span>
+      <div className="text-right tabular-nums ">
+        {formatNumber(row.original.total_spend, 2)}
+      </div>
     ),
   },
 ];
