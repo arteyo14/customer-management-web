@@ -23,6 +23,7 @@ export const useCustomerDetailStore = create<IState>((set) => ({
           window.location.href = "/not-found";
         },
       });
+      return;
     }
 
     set({ data: res.data, loading: false });
