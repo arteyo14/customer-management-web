@@ -1,37 +1,41 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { useState } from "react";
 import { SearchIcon, XIcon } from "lucide-react";
+
 import { useCustomerListStore } from "../../store";
 
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
 export const CustomerSearchHeader = () => {
-  const { params, setParams, getData } = useCustomerListStore();
+  const { params, setParams } = useCustomerListStore();
+
+  const [tempSearch, setTempSearch] = useState(params.search);
 
   const handleSearch = () => {
-    setParams({ page: 1 });
-    getData();
+    setParams({ search: tempSearch, page: 1 });
   };
 
   const handleReset = () => {
-    setParams({ search: "" });
-    getData();
+    setTempSearch("");
+    setParams({ search: "", page: 1 });
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-white p-4 rounded-2xl border border-gray-100 shadow-sm">
       <div className="relative w-full lg:max-w-md">
         <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
           <SearchIcon className="size-4 text-gray-400" />
         </div>
         <Input
-          value={params.search}
+          value={tempSearch}
           placeholder="Search customers..."
           className="pl-10 pr-10 py-6 md:py-5 bg-gray-50/50 border-gray-200 focus:bg-white transition-all rounded-xl text-sm md:text-base"
-          onChange={(e) => setParams({ search: e.target.value })}
+          onChange={(e) => setTempSearch(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSearch()}
         />
-        {params.search && (
+        {tempSearch && (
           <button
             onClick={handleReset}
             className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-error transition-colors"
