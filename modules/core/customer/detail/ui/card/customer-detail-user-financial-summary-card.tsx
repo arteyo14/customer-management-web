@@ -5,7 +5,7 @@ import { useCustomerDetailStore } from "../../store";
 export const CustomerDetailUserFinancialSummaryCard = () => {
   const { data } = useCustomerDetailStore();
   return (
-    <div className="bg-white rounded-4xl shadow-sm p-8">
+    <div className="bg-white rounded-4xl shadow-sm p-7">
       <div className="text-xs text-primary font-bold mb-8">
         FINANCIAL & PURCHASE SUMMARY
       </div>
