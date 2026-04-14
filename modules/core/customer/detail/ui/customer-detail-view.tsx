@@ -6,14 +6,13 @@ import { useCustomerDetailStore } from "../store";
 import Link from "next/link";
 import { ArrowLeftIcon } from "lucide-react";
 import { CustomerDetailInfo } from "./customer-detail-info";
+import { CustomerDetailSkeletonLoading } from "./card/customer-skeleton-loading";
 
 export const CustomerDetailView = ({ id }: { id: number }) => {
   const { loading, getData } = useCustomerDetailStore();
 
   useEffect(() => {
-    if (!id) return;
-
-    getData(id);
+    if (id) getData(id);
   }, [id, getData]);
 
   return (
@@ -27,7 +26,7 @@ export const CustomerDetailView = ({ id }: { id: number }) => {
           <span className="font-bold">Back to customer list</span>
         </Link>
       </div>
-      {loading ? <div>Loading...</div> : <CustomerDetailInfo />}
+      {loading ? <CustomerDetailSkeletonLoading /> : <CustomerDetailInfo />}
     </div>
   );
 };

@@ -10,10 +10,9 @@ interface IState {
 }
 
 export const useCustomerDetailStore = create<IState>((set) => ({
-  loading: false,
+  loading: true,
   data: null!,
   getData: async (id: number) => {
-    set({ loading: true });
     const service = new CustomerService();
     const res = await service.getCustomerDetail(id);
 
