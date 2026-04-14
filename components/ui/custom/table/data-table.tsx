@@ -1,0 +1,110 @@
+"use client";
+
+import {
+  flexRender,
+  getCoreRowModel,
+  useReactTable,
+  ColumnDef,
+} from "@tanstack/react-table";
+import { TablePagination } from "./table-pagination";
+
+interface DataTableProps<TData, TValue> {
+  columns: ColumnDef<TData, TValue>[];
+  data: TData[];
+  loading?: boolean;
+  totalItems: number;
+  page: number;
+  limit: number;
+  onPageChange: (page: number) => void;
+  onLimitChange: (limit: number) => void;
+}
+
+export function DataTable<TData, TValue>({
+  columns,
+  data,
+  loading,
+  totalItems,
+  page,
+  limit,
+  onPageChange,
+  onLimitChange,
+}: DataTableProps<TData, TValue>) {
+  // eslint-disable-next-line react-hooks/incompatible-library
+  const table = useReactTable({
+    data,
+    columns,
+    getCoreRowModel: getCoreRowModel(),
+    manualPagination: true,
+  });
+
+  return (
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <div className="overflow-x-auto relative">
+        {loading && (
+          <div className="absolute inset-0 bg-white/60 flex items-center justify-center z-20 backdrop-blur-[1px]">
+            <span className="animate-spin rounded-full h-10 w-10 border-b-2 border-primary"></span>
+          </div>
+        )}
+
+        <table className="w-full text-left border-collapse">
+          <thead className="bg-[#F7FCF8] text-xs font-bold text-gray-500 uppercase tracking-wider">
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
+                  <th key={header.id} className="px-6 py-4">
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+
+          <tbody className="divide-y divide-gray-100">
+            {table.getRowModel().rows?.length
+              ? table.getRowModel().rows.map((row) => (
+                  <tr
+                    key={row.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
+                    {row.getVisibleCells().map((cell) => (
+                      <td
+                        key={cell.id}
+                        className="px-6 py-4 text-sm text-text-main"
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))
+              : !loading && (
+                  <tr>
+                    <td
+                      colSpan={columns.length}
+                      className="h-24 text-center text-gray-400 italic"
+                    >
+                      No results found.
+                    </td>
+                  </tr>
+                )}
+          </tbody>
+        </table>
+      </div>
+
+      <TablePagination
+        currentPage={page}
+        totalItems={totalItems}
+        limit={limit}
+        onLimitChange={onLimitChange}
+        onPageChange={onPageChange}
+      />
+    </div>
+  );
+}
