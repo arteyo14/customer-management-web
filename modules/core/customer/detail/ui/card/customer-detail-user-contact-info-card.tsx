@@ -11,7 +11,7 @@ import { useCustomerDetailStore } from "../../store";
 export const CustomerDetailUserContactInfoCard = () => {
   const { data } = useCustomerDetailStore();
   return (
-    <div className="bg-[#F0F5F1] rounded-4xl  p-8">
+    <div className="bg-[#F0F5F1] rounded-4xl p-8">
       <div className="flex flex-col space-y-4">
         <h6 className="text-primary text-sm font-bold">
           PRIMARY CONTACT POINTS
