@@ -1,5 +1,6 @@
 "use client";
 
+import { formatNumber } from "@/utils/number";
 import { useCustomerDetailStore } from "../../store";
 
 export const CustomerDetailUserFinancialSummaryCard = () => {
@@ -15,14 +16,14 @@ export const CustomerDetailUserFinancialSummaryCard = () => {
             TOTAL LIFETIME SPEND
           </span>
           <span className="text-3xl font-bold text-primary">
-            {data?.total_spend}
+            {formatNumber(data?.total_spend, 2)}
           </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-[#F0F5F1] rounded-4xl p-4 ">
             <div className="text-xs font-bold text-gray-600">PURCHASES</div>
             <div className="text-lg font-bold text-primary">
-              {data?.number_of_purchases}
+              {formatNumber(data?.number_of_purchases, 2)}
             </div>
           </div>
           <div className="bg-[#F0F5F1] rounded-4xl p-4 ">
@@ -34,7 +35,9 @@ export const CustomerDetailUserFinancialSummaryCard = () => {
               <div className="text-xs font-bold text-gray-600">
                 CREDIT LIMIT
               </div>
-              <div className="text-lg font-bold text-primary">15000</div>
+              <div className="text-lg font-bold text-primary">
+                {formatNumber(15000, 2)}
+              </div>
             </div>
             <div>
               <div className="text-xs font-bold text-gray-600">LAST ORDER</div>

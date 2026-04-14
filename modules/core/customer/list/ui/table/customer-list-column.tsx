@@ -4,6 +4,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
 import { ICustomerListResponse } from "../../infrastructure";
 import Link from "next/link";
+import { formatNumber } from "@/utils/number";
 
 export const getColumns = (
   onSort: (id: string) => void,
@@ -79,7 +80,7 @@ export const getColumns = (
       </button>
     ),
     cell: ({ row }) => (
-      <span>${row.original.total_spend.toLocaleString()}</span>
+      <span>${formatNumber(row.original.total_spend, 2)}</span>
     ),
   },
 ];

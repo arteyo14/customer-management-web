@@ -6,6 +6,7 @@ import {
   MailIcon,
   PhoneCallIcon,
 } from "lucide-react";
+import { format } from "date-fns";
 import { useCustomerDetailStore } from "../../store";
 
 export const CustomerDetailUserContactInfoCard = () => {
@@ -41,7 +42,7 @@ export const CustomerDetailUserContactInfoCard = () => {
           <div className="flex flex-col">
             <span className="text-xs font-medium">ACTIVE SINCE</span>
             <span className="text-sm font-semibold">
-              {data?.active_since as string}
+              {format(data?.active_since, "dd MMM yyyy") || "-"}
             </span>
           </div>
         </div>
