@@ -13,7 +13,7 @@ export const CustomerListHeader = () => {
         </p>
       </div>
       <div className="flex justify-end mt-4 md:mt-0">
-        <Button className="bg-primary text-white p-4 h-10 rounded-lg font-bold w-1/2 md:w-auto">
+        <Button className="bg-primary text-white p-4 h-10 rounded-lg font-bold w-40  md:w-auto">
           <PlusIcon className="w-4 h-4 mr-2" />
           Add Customer
         </Button>
