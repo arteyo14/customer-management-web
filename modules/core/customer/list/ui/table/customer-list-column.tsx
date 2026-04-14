@@ -3,6 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
 import { ICustomerListResponse } from "../../infrastructure";
+import Link from "next/link";
 
 export const getColumns = (
   onSort: (id: string) => void,
@@ -29,7 +30,12 @@ export const getColumns = (
       </button>
     ),
     cell: ({ row }) => (
-      <span className="font-semibold">{row.original.name}</span>
+      <Link
+        href={`/customer/${row.original.id}`}
+        className="font-semibold hover:text-primary hover:underline"
+      >
+        {row.original.name}
+      </Link>
     ),
   },
   {
