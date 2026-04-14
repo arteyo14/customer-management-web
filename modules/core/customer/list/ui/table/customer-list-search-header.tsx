@@ -37,7 +37,7 @@ export const CustomerSearchHeader = () => {
         />
         {tempSearch && (
           <button
-            onClick={handleReset}
+            onClick={() => setTempSearch("")}
             className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-error transition-colors"
           >
             <XIcon className="size-4" />
