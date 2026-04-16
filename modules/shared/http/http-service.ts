@@ -23,17 +23,8 @@ export abstract class HttpService {
       "application/json;charset=utf-8";
   }
 
-  protected createQueryParams(
-    params: Record<
-      string,
-      | string
-      | number
-      | boolean
-      | Array<string | number | boolean>
-      | null
-      | undefined
-    >,
-  ): URLSearchParams {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  protected createQueryParams(params: Record<string, any>): URLSearchParams {
     const queryParams = new URLSearchParams();
 
     Object.entries(params).forEach(([key, value]) => {
