@@ -1,6 +1,19 @@
 # 🖥️ Customer Management Web
 
-ระบบหน้าบ้านสำหรับบริหารจัดการข้อมูลลูกค้า พัฒนาด้วย Next.js 15
+Frontend application for customer data management, developed with Next.js 15.
+
+## 🚀 Live Demo (Deployed Version)
+
+- **Web Application:** https://customer-management-web-uaen.vercel.app
+- **API Endpoint:** https://customer-manangement-api-mock.onrender.com/api
+
+**Login Credentials:**
+- **email:** `admin@example.com`
+- **password:** `P@ssw0rd!`
+
+*(Note: The backend API is hosted on a free Render instance, so it may take up to 50 seconds to wake up on the first load.)*
+
+---
 
 ## 🛠️ Chosen Stack
 
@@ -11,20 +24,18 @@
 - **Styling:** Tailwind CSS v4 + Shadcn/UI
 - **Form Handling:** React Hook Form + Zod
 
-## ⚙️ Setup & Run Instructions
+---
 
-1. ติดตั้ง Dependencies:
+## ⚙️ Setup & Run Instructions (Local)
+
+1. Install Dependencies:
    ```bash
    bun install
    ```
-2. รัน Development Server:
+2. Run Development Server:
    ```bash
    bun run dev
    ```
-3. เข้าใช้งานที่ http://localhost:3000
+3. Access the app at: http://localhost:3000
 
-เข้าสู่ระบบด้วยข้อมูลดังนี้:
-email: admin@example.com
-password: P@ssw0rd!
-
-** run โปรเจค Backend https://github.com/arteyo14/customer-manangement-api พร้อมกัน **
+**Remember to run the backend API project (https://github.com/arteyo14/customer-manangement-api) simultaneously.**
