@@ -1,6 +1,8 @@
 import { IResponse } from "@/types/constant/http";
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
 
+const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080/api";
+
 export function isAxiosError(value: unknown): value is AxiosError {
   return axios.isAxiosError(value);
 }
@@ -10,9 +12,9 @@ export abstract class HttpService {
 
   protected constructor(
     protected readonly path?: string,
-    protected baseURL: string = "http://localhost:8080/api",
+    protected baseURL: string = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080/api",
   ) {
-    if (path) this.baseURL += path;
+    this.baseURL = path ? `${BASE_API_URL}${path}` : BASE_API_URL;
     this.http = axios.create({ baseURL: this.baseURL });
     this.setupInterceptors();
   }
