@@ -4,7 +4,7 @@ Frontend application for customer data management, developed with Next.js 15.
 
 ## 🚀 Live Demo (Deployed Version)
 
-- **Web Application:** https://customer-management-web-uaen.vercel.app
+- **Web Application:** https://customer-management-web.vercel.app/
 - **API Endpoint:** https://customer-manangement-api-mock.onrender.com/api
 
 **Login Credentials:**
